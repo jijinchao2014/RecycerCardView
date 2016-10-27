@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rl_popup_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_89000000">
+    <LinearLayout
+        android:id="@+id/ll_item_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/lv_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ffffff"
+            android:divider="@color/color_eeeeee"
+            android:scrollbars="none"
+            android:dividerHeight="0.5dp">
+        </ListView>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="2dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    app:cardElevation="2dp"
+                                    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:lineSpacingExtra="3dp"
+                android:lines="2"
+                android:maxLines="2"
+                android:text="简单3招，从小培养孩子的口语能力"
+                android:textColor="@color/color_333333"
+                android:textSize="18dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxWidth="170dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:text="新浪娱乐新浪娱乐新浪娱乐新浪娱乐"
+                    android:textColor="@color/color_999999"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:text="20666赞"
+                    android:textColor="@color/color_999999"
+                    android:textSize="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    android:layout_width="30dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/bg_tip_item"
+                    android:gravity="center"
+                    android:text="热门"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_e86963"
+                    android:textSize="11dp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="108dp"
+            android:layout_height="71dp"
+            android:layout_marginLeft="12dp"
+            android:scaleType="centerCrop"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
