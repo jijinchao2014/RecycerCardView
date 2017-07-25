@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -43,6 +45,10 @@ public class BbtreeHeaderView extends FrameLayout implements PtrUIHandler{
     private Context mContext;
 
     private LastUpdateTimeUpdater mLastUpdateTimeUpdater = new LastUpdateTimeUpdater();
+    private ImageView iv_bg2;
+    private ImageView iv_bg1;
+    private Animation anim_left;
+    private Animation anim_right;
 
     public BbtreeHeaderView(Context context) {
         super(context);
@@ -71,6 +77,8 @@ public class BbtreeHeaderView extends FrameLayout implements PtrUIHandler{
 
         tvStretch = (TextView) header.findViewById(R.id.tv_stretch);
         ivBaby = (ImageView) header.findViewById(R.id.iv_heade_baby);
+        iv_bg1 = (ImageView) header.findViewById(R.id.iv_bg1);
+        iv_bg2 = (ImageView) header.findViewById(R.id.iv_bg2);
 
         //帧动画
         ivBaby.setBackgroundResource(R.drawable.baby_anim);
@@ -79,6 +87,9 @@ public class BbtreeHeaderView extends FrameLayout implements PtrUIHandler{
 
         mTitleTextView = (TextView) header.findViewById(R.id.ptr_classic_header_rotate_view_header_title);
         mLastUpdateTextView = (TextView) header.findViewById(R.id.ptr_classic_header_rotate_view_header_last_update);
+
+        anim_left = AnimationUtils.loadAnimation(mContext, R.anim.set_left_bg);
+        anim_right = AnimationUtils.loadAnimation(mContext, R.anim.set_right_bg);
 
     }
 
@@ -147,6 +158,9 @@ public class BbtreeHeaderView extends FrameLayout implements PtrUIHandler{
 
         tryUpdateLastUpdateTime();
         mLastUpdateTimeUpdater.stop();
+
+        iv_bg1.startAnimation(anim_left);
+        iv_bg2.startAnimation(anim_right);
     }
 
     @Override
@@ -154,7 +168,8 @@ public class BbtreeHeaderView extends FrameLayout implements PtrUIHandler{
 
         mTitleTextView.setVisibility(VISIBLE);
         mTitleTextView.setText(getResources().getString(R.string.ptr_refresh_complete));
-
+        iv_bg1.clearAnimation();
+        iv_bg2.clearAnimation();
         // update last update time
         SharedPreferences sharedPreferences = getContext().getSharedPreferences(KEY_SharedPreferences, 0);
         if (!TextUtils.isEmpty(mLastUpdateTimeKey)) {

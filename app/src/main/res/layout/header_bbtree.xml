@@ -5,9 +5,19 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:background="@mipmap/bg_header_grass"
         android:layout_height="75dp">
 
+        <ImageView
+            android:id="@+id/iv_bg1"
+            android:layout_width="match_parent"
+            android:src="@mipmap/bg_header_grass"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_bg2"
+            android:layout_width="match_parent"
+            android:src="@mipmap/bg_header_grass"
+            android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/tv_stretch"
             android:layout_width="wrap_content"
@@ -50,28 +60,6 @@
                 android:textSize="11dp" />
         </LinearLayout>
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:visibility="gone"
-            android:layout_toLeftOf="@+id/ptr_classic_header_rotate_view_header_text">
-
-            <ImageView
-                android:id="@+id/ptr_classic_header_rotate_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ptr_rotate_arrow" />
-
-            <ProgressBar
-                android:id="@+id/ptr_classic_header_rotate_view_progressbar"
-                style="@android:style/Widget.ProgressBar.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
-        </FrameLayout>
     </RelativeLayout>
 
 </LinearLayout>
